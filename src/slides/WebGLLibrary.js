@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Three() {
+export default function WebGLLibrary() {
   return (
     <section className="slide">
       <h2>THREE - WebGL Library</h2>

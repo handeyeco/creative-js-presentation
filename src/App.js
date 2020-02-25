@@ -1,38 +1,73 @@
-import React, { useState } from 'react'
+import React from 'react'
+import {
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 import './App.css'
 
 import slides from './slides'
 
-function App() {
-  const [slideIndex, setSlideIndex] = useState(0)
-  const Slide = slides[slideIndex]
-  const progress = (slideIndex / (slides.length - 1)) * 100
+function App({
+  location
+}) {
+  let currSlide = location.pathname.match(/^\/(\d+)/)
+  currSlide = currSlide ? +currSlide[1] : 0
+  currSlide = currSlide <= slides.length ? currSlide : 0
+
+  const Slide = slides[currSlide]
+  const progress = (currSlide / (slides.length - 1)) * 100
+
+  console.log(slides)
 
   return (
     <div className="container">
-      <div className="progress" style={{ width: `${progress}%`}}></div>
+      
 
-      <Slide />
+      <Switch>
+        <Route exact path="/secret">
+          <div className="secret">
+            {
+              slides.map((Slide, i) => (
+                <Link to={`/${i}`} key={Slide.name + i}>
+                  { `${i}. ${Slide.name}` }
+                </Link>
+              ))
+            }
+          </div>
+        </Route>
 
-      <nav className="nav">
-        <span>
-          {
-            slideIndex > 0 && (
-              <button onClick={() => setSlideIndex(slideIndex - 1) }>←</button>
-            )
-          }
-        </span>
+        <Route>
+          <div className="progress" style={{ width: `${progress}%`}}></div>
 
-        <span>
-          {
-            slideIndex < slides.length - 1 && (
-              <button onClick={() => setSlideIndex(slideIndex + 1) }>→</button>
-            )
-          }
-        </span>
-      </nav>
+          <Slide />
+
+          <nav className="nav">
+            <span>
+              {
+                currSlide > 0 && (
+                  <Link to={`/${currSlide - 1}`}>
+                    <button type="button">←</button>
+                  </Link>
+                )
+              }
+            </span>
+
+            <span>
+              {
+                currSlide < slides.length - 1 && (
+                  <Link to={`/${currSlide + 1}`}>
+                    <button type="button">→</button>
+                  </Link>
+                )
+              }
+            </span>
+          </nav>
+        </Route>
+      </Switch>
     </div>
   )
 }
 
-export default App
+export default withRouter(App)

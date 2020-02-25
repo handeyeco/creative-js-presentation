@@ -30,3 +30,9 @@ nav button {
   height: 100vh;
   overflow: hidden;
 }
+
+.secret a {
+  display: inline-block;
+  margin: 2rem;
+  font-size: 0.75em;
+}

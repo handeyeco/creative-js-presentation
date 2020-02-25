@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Tone() {
+export default function WebAudioLibrary() {
   return (
     <section className="slide">
       <h2>Tone - Web Audio Library</h2>

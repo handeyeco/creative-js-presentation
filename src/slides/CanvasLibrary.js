@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function P5() {
+export default function CanvasLibrary() {
   return (
     <section className="slide">
       <h2>P5 - Canvas Library</h2>

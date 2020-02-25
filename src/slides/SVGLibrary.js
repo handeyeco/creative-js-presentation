@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function D3() {
+export default function SVGLibrary() {
   return (
     <section className="slide">
       <h2>D3 - SVG / Math Library</h2>
