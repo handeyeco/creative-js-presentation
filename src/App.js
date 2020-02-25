@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+
+import slides from './slides'
 
 function App() {
+  const [slideIndex, setSlideIndex] = useState(0)
+  const Slide = slides[slideIndex]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Slide />
+
+      <nav className="nav">
+        <span>
+          {
+            slideIndex > 0 && (
+              <button onClick={() => setSlideIndex(slideIndex - 1) }>←</button>
+            )
+          }
+        </span>
+
+        <span>
+          {
+            slideIndex < slides.length - 1 && (
+              <button onClick={() => setSlideIndex(slideIndex + 1) }>→</button>
+            )
+          }
+        </span>
+      </nav>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
