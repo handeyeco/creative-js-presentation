@@ -19,8 +19,6 @@ function App({
   const Slide = slides[currSlide]
   const progress = (currSlide / (slides.length - 1)) * 100
 
-  console.log(slides)
-
   return (
     <div className="container">
       
