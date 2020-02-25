@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ArtAPIs() {
+export default function Questions() {
   return (
     <section className="slide">
-      <h2>Artistic Browser APIs</h2>
+      <h2>Questions?</h2>
     </section>
   )
 }

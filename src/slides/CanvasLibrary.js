@@ -7,9 +7,9 @@ export default function P5() {
 
       <ul>
         <li>Free and Open Source (LGPL)</li>
-        <li>Created by the Processing Foundation</li>
         <li>Developed specifically for artists</li>
-        <li>Removes a lot of the pain</li>
+        <li>Tons of artsy helper functions</li>
+        <li>Manages rendering loops</li>
       </ul>
 
       <a href="https://p5js.org/examples/drawing-patterns.html"
