@@ -6,9 +6,12 @@ import slides from './slides'
 function App() {
   const [slideIndex, setSlideIndex] = useState(0)
   const Slide = slides[slideIndex]
+  const progress = (slideIndex / (slides.length - 1)) * 100
 
   return (
-    <div>
+    <div className="container">
+      <div className="progress" style={{ width: `${progress}%`}}></div>
+
       <Slide />
 
       <nav className="nav">

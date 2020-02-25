@@ -13,7 +13,7 @@ export default function WebGLResource() {
             The Book of Shaders by Patricio Gonzalez Vivo and Jen Lowe
           </a>
         </figcaption>
-    </figure>
+      </figure>
     </section>
   )
 }

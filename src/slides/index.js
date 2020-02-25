@@ -28,6 +28,9 @@ import MoreAPIs from './MoreAPIs'
 import MoreLibraries from './MoreLibraries'
 import Thanks from './Thanks'
 
+import preloadImages from './images/preloadImages'
+preloadImages()
+
 export default [
   Thanks,
   Questions,
