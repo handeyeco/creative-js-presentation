@@ -1,4 +1,8 @@
-import React from 'react'
+import React, {
+  useState,
+  useEffect,
+  useRef
+} from 'react'
 import {
   Switch,
   Route,
@@ -10,19 +14,58 @@ import './App.css'
 import slides from './slides'
 
 function App({
-  location
+  location,
+  history
 }) {
   let currSlide = location.pathname.match(/^\/(\d+)/)
   currSlide = currSlide ? +currSlide[1] : 0
   currSlide = currSlide <= slides.length ? currSlide : 0
-
+  
   const Slide = slides[currSlide]
   const progress = (currSlide / (slides.length - 1)) * 100
+  
+  const containerRef = useRef()
+  useEffect(() => {
+    function handleKeyPress(e) {
+      switch (e.key) {
+        case 'ArrowRight': {
+          if (currSlide < slides.length - 1) {
+            history.push(`${currSlide + 1}`)
+          }
+          break
+        }
+        case 'ArrowLeft': {
+          if (currSlide > 0) {
+            history.push(`${currSlide - 1}`)
+          }
+          break
+        }
+        case 'ArrowUp': {
+          const curr = containerRef.current
+          if (curr) {
+            if (!document.fullscreenElement) {
+              curr
+                .requestFullscreen()
+                .catch(err => console.error(err))
+            } else {
+              document.exitFullscreen()
+            }
+          }
+          break
+        }
+        default: {}
+      }
+    }
+
+    window.addEventListener('keyup', handleKeyPress)
+
+    return () => {
+      window.removeEventListener('keyup', handleKeyPress)
+    }
+  }, [currSlide, history])
 
   return (
-    <div className="container">
-      
-
+    <div className="container" ref={containerRef}>
       <Switch>
         <Route exact path="/secret">
           <div className="secret">

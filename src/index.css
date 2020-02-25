@@ -4,11 +4,4 @@ html {
 
 body {
   margin: 0;
-  background: #017D5F;
-  background: linear-gradient(to bottom left, #017D5F, #164C3F);
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  font-family: 'Cardo';
-  font-size: 4rem;
-  line-height: 1.5em;
 }

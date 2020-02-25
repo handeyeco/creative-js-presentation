@@ -10,6 +10,7 @@ export default function Why() {
         <li>It's expressive</li>
         <li>Teaches you a lot about code</li>
         <li>Looks good as a portfolio piece</li>
+        <li>Not enough people are doing it</li>
       </ul>
     </section>
   )
