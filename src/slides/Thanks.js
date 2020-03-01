@@ -15,7 +15,8 @@ export default function Thanks() {
           target="_blank"
           rel="noopener noreferrer">
           Github
-        </a></span>
+        </a>
+      </span>
     </section>
   )
 }

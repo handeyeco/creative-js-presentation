@@ -8,6 +8,7 @@ export default function Why() {
       <ul>
         <li>It's fun</li>
         <li>It's expressive</li>
+        <li>It's open / distributed</li>
         <li>Teaches you a lot about code</li>
         <li>Looks good as a portfolio piece</li>
         <li>Not enough people are doing it</li>

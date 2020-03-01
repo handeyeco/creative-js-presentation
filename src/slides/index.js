@@ -1,6 +1,7 @@
 import './slides.css'
 
 import Intro from './Intro'
+import Matthew from './Matthew'
 import QuestionsIntro from './QuestionsIntro'
 import Questions from './Questions'
 import Why from './Why'
@@ -61,6 +62,7 @@ export default [
   JSvAPI,
   Why,
   QuestionsIntro,
+  Matthew,
   Intro,
 ]
 .reverse()

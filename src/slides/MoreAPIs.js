@@ -10,13 +10,21 @@ export default function MoreAPIs() {
         <ul>
           <li>Video game controller for games or installations</li>
         </ul>
+
         <li>Web MIDI API</li>
         <ul>
           <li>Musical Instrument Digital Interface</li>
           <li>MIDI controller for instruments or installations</li>
-        </ul><li>Web Bluetooth API</li>
+        </ul>
+
+        <li>Web Bluetooth API</li>
         <ul>
           <li>Control embedded devices from a browser</li>
+        </ul>
+        
+        <li>WebXR</li>
+        <ul>
+          <li>Create immersive VR or AR experiences</li>
         </ul>
       </ul>
     </section>
